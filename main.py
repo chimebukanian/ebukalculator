@@ -1,10 +1,10 @@
 from kivy.config import Config
-Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
+Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 class EbukalculatorApp(App):
     def build(self):
