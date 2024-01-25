@@ -8,7 +8,7 @@ Config.set('kivy', 'keyboard_mode', 'systemandmulti')
 
 class EbukalculatorApp(App):
     def build(self):
-        self.icon='C:/Users/c/kviy_folder/kivyimages/PicsArt_12-27-10.23.41.png'
+        self.icon='C:/Users/USER/vs_kivy/ebukalculator/ebu.png'
         self.operators= ["/", "*", "+", "-"]
         self.dividetimes=['/', '*']
         main_layout=BoxLayout(orientation="vertical")
@@ -59,6 +59,15 @@ class EbukalculatorApp(App):
 
     def on_solution(self, instance):
         text=self.solution.text
+        # Find the last occurrence of '\n'
+        last_newline_index = text.rfind('\n')
+
+       # Check if '\n' is found
+        if last_newline_index != -1:
+            # Modify the string by removing everything from '\n' and backwards
+            self.solution.text = text[last_newline_index + 1:]
+        self.solution.text
+        print(text)
         if text:
             if text==text[-1]:
                 return 
